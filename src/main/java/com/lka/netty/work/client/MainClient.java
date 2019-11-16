@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.client;
+package com.lka.netty.work.client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

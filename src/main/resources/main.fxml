@@ -6,20 +6,46 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="rootNode" alignment="CENTER" prefHeight="400.0" prefWidth="400.0"
-      style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);"
-      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea"
-      fx:controller="com.flamexander.netty.example.client.MainController">
-    <HBox>
-        <TextField fx:id="tfFileName" focusTraversable="false"
-                   promptText="Укажите имя файла на сервере, который хотите скачать" HBox.hgrow="ALWAYS"/>
-        <Button onAction="#pressOnDownloadBtn" text="Скачать"/>
-    </HBox>
-    <HBox>
-        <TextField fx:id="tfOutputFileName" focusTraversable="false"
-                   promptText="Укажите имя файла на компьютере, который необходимо передать на сервер"
-                   HBox.hgrow="ALWAYS"/>
-        <Button onAction="#pressOnUploadBtn" text="Отправить"/>
-    </HBox>
-    <ListView fx:id="filesList" VBox.vgrow="ALWAYS"/>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<VBox fx:id="rootNode" alignment="CENTER" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.lka.netty.work.client.MainController">
+
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Refresh" onAction="#updateListsOfFiles"/>
+                    <SeparatorMenuItem />
+                    <MenuItem text="Exit" onAction="#exitApp"/>
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem text="About"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <VBox prefWidth="300.0" HBox.hgrow="ALWAYS">
+        <Label alignment="CENTER" maxWidth="Infinity" minHeight="26" prefHeight="26" text="Local files" HBox.hgrow="ALWAYS"/>
+        <HBox>
+            <TextField fx:id="tfInputFileName" focusTraversable="false" promptText="Укажите имя файла на сервере, который хотите скачать" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnDownloadBtn" text="Скачать" />
+        </HBox>
+        <ListView fx:id="clientFilesList" VBox.vgrow="ALWAYS" />
+    </VBox>
+    <VBox prefWidth="300.0" HBox.hgrow="ALWAYS">
+        <Label alignment="CENTER" maxWidth="Infinity" minHeight="26" prefHeight="26" text="Cloud files" HBox.hgrow="ALWAYS"/>
+        <HBox>
+            <TextField fx:id="tfOutputFileName" focusTraversable="false" promptText="Укажите имя файла на компьютере, который хотите загрузить на сервер" HBox.hgrow="ALWAYS" />
+            <Button onAction="#pressOnUploadBtn" text="Загрузить" />
+        </HBox>
+        <ListView fx:id="serverFilesList" VBox.vgrow="ALWAYS" />
+    </VBox>
 </VBox>
+

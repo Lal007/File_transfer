@@ -1,6 +1,6 @@
-package com.flamexander.netty.example.client;
+package com.lka.netty.work.client;
 
-import com.flamexander.netty.example.common.AbstractMessage;
+import com.lka.netty.work.common.AbstractMessage;
 import io.netty.handler.codec.serialization.ObjectDecoderInputStream;
 import io.netty.handler.codec.serialization.ObjectEncoderOutputStream;
 

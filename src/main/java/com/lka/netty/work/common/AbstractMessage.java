@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.common;
+package com.lka.netty.work.common;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.flamexander.netty.example.common;
+package com.lka.netty.work.common;
 
 public class FileRequest extends AbstractMessage {
     private String filename;

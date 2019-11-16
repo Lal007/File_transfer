@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox fx:id="login" alignment="CENTER"
+      style="-fx-background-color: linear-gradient(#fff 0%, #eee 10%, #ddd 90%, #bbb 100%);"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lka.netty.work.client.LoginController"
+      prefHeight="400.0" prefWidth="200.0">
+
+    <TextField fx:id="loginTf" promptText="Enter login" HBox.hgrow="ALWAYS">
+        <VBox.margin>
+            <Insets bottom="10.0"/>
+        </VBox.margin>
+    </TextField>
+    <PasswordField fx:id="passTf" promptText="Enter password" HBox.hgrow="ALWAYS"/>
+    <Button onAction="#pressOnLoginBtn" text="Login">
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets top="10.0"/>
+        </VBox.margin>
+    </Button>
+
+</VBox>
